@@ -1,0 +1,554 @@
+/* 
+
+  [1 ] GLOBAL STYLE 
+
+*/
+
+:root {
+  --primary-color   : #13172B;
+  --secondary-color : #555761;
+  --accent-color    : #D51A1D;
+  --pink-color      : #FFE0D9;
+  --white-100-color : #F5F7FD;
+  --green-color     : #DEF3E5;
+  --purple-color     : #D2DFFF;
+  --sky-color       : #709CD0;
+
+
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: local('TT Firs Neue Medium'), local('TT-Firs-Neue-Medium'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-Medium.woff') format('woff2'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-Medium.woff') format('woff'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: local('TT Firs Neue Demi Bold'), local('TT-Firs-Neue-Demi-Bold'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-DemiBold.woff2') format('woff2'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-DemiBold.woff') format('woff'),
+      url('/fonts/TT-Firs-Neue/TTFirsNeue-DemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont Regular'), local('Mont-Regular'),
+      url('/fonts/Mont/Mont-Regular.woff2') format('woff2'),
+      url('/fonts/Mont/Mont-Regular.woff') format('woff'),
+      url('/fonts/Mont/Mont-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont Semi Bold'), local('Mont-Semi-Bold'),
+      url('/fonts/Mont/Mont-SemiBold.woff2') format('woff2'),
+      url('/fonts/Mont/Mont-SemiBold.woff') format('woff'),
+      url('/fonts/Mont/Mont-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont Bold'), local('Mont-Bold'),
+      url('/fonts/Mont/Mont-Bold.woff2') format('woff2'),
+      url('/fonts/Mont/Mont-Bold.woff') format('woff'),
+      url('/fonts/Mont/Mont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Mont';
+  src: local('Mont Black'), local('Mont-Black'),
+      url('/fonts/Mont/Mont-Black.woff2') format('woff2'),
+      url('/fonts/Mont/Mont-Black.woff') format('woff'),
+      url('/fonts/Mont/Mont-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+} */
+
+
+
+*{box-sizing: border-box;}
+
+@media(max-width: 1600px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 28px;
+  font-family: 'Mont'
+}
+
+
+
+@media(min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+@media(min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+h1,h2,h3,h4,h5,h6,p {margin: 0;}
+
+ol, ul {list-style: none; margin: 0; padding: 0;}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 4rem;
+  line-height: 4.5rem;
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+  font-family: 'TT Firs Neue';
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 2.6rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+  font-family: 'TT Firs Neue';
+}
+
+h3 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  line-height: 2.8rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  font-family: 'Mont';
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  color: var(--secondary-color);
+  font-size: .9rem;
+}
+
+.btn {
+  padding: .85rem 2.4rem;
+  font-size: 1rem;
+  border-radius: 50px;
+}
+
+.btn-danger {
+  background-color: var(--accent-color) !important;
+  border: none;
+}
+
+.marked {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+section {
+  padding: 6rem 0;
+}
+
+li {
+  color: var(--secondary-color);
+}
+
+li svg {
+  width: 1.2rem ;
+  min-width: 1.2rem;
+  height: 1.2rem ;
+  padding: 2px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.manual li svg {
+  background-color: rgb(255 70 75 / 50%);
+  color: #FF464B;
+}
+.ai li svg {
+  background-color: rgb(33 194 114 / 50%);
+  color: #21C272;
+}
+/* 
+
+[ 2 ] Header & Navbar Style 
+
+*/
+
+#header {
+  padding: 2rem 0;
+}
+
+#header .navbar-nav .nav-item .nav-link {
+  color: var(--primary-color) ;
+  font-weight: 600;
+}
+
+#header .navbar-nav .nav-item:hover .nav-link{
+  color: var(--accent-color);
+}
+
+
+
+/* 
+
+[ 3 ] Home section
+
+*/
+
+#home .home-img  {
+  background-image: url(/images/hero-img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40rem;
+  max-height: 40rem;
+  margin-top: 3rem;
+}
+
+/* 
+
+[ 4 ] About section
+
+*/
+#about .row {
+  column-gap: 8.5rem;
+}
+
+#about .video-player {
+  height: 22rem;
+  background-image: url(/images/video-cover.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .video-player .play-icon {
+  max-width: 5rem;
+  cursor: pointer;
+}
+
+
+/* 
+
+[ 5 ] Power section
+
+*/
+#power .power-img {
+  height: 28rem;
+  background-image: url(/images/the-power-of-intelligence.png);
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin-bottom: 3rem;
+}
+
+
+/* 
+
+[ 6 ] what-solve section
+
+*/
+#what-solve {
+  padding: 5rem 0;
+  background-color: var(--white-100-color);
+}
+#what-solve .row {
+  column-gap: 10rem;
+}
+
+
+/* 
+
+[ 7 ] trust-us section
+
+*/
+#trust-us .regulator {
+  margin-top: 3rem;
+}
+
+#trust-us .container > .regulator[aria-name="fincen"] {
+  background-color: var(--pink-color);
+}
+#trust-us .container > .regulator[aria-name="fintrac"] {
+  background-color: var(--green-color);
+}
+#trust-us .container > .regulator[aria-name="asic"]{
+  background-color: var(--purple-color);
+}
+
+#trust-us .regulator_info {
+  padding: 2.5rem 8rem 2.5rem 2.5rem;
+}
+
+#trust-us .regulator_info .msb_num {
+  background-color: #FFF;
+  padding: .6rem 1.2rem;
+  max-width: max-content;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+#trust-us .regulator_info .regulator_head{
+  margin-bottom: 2.5rem;
+}
+
+#trust-us .regulator_info .regulator_head .regulator_avatar{
+  max-width: 250px;
+  filter: drop-shadow(0 4px 32px rgba(0,0,0,.08))
+}
+
+#trust-us .regulator_info .regulator_body p{
+  font-size: 16px;
+}
+
+#trust-us .regulator .regulator_img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 250px;
+}
+#trust-us .regulator[aria-name="fincen"] .regulator_img {
+  background-image: url(/images/fincen-img.png);
+  border-bottom: 8px solid #FF7554;
+  
+}
+#trust-us .regulator[aria-name="fintrac"]  .regulator_img {
+  background-image: url(/images/fintrac-img.png);
+  border-bottom: 8px solid #60CF41;
+  ;
+  
+}
+#trust-us .regulator[aria-name="asic"]  .regulator_img {
+  background-image: url(/images/asic-img.png);
+  border-bottom: 8px solid #3C72FF;
+  ;
+  
+}
+
+/* [ 8 ] pricing section */
+#pricing .boxes {
+  margin-top: 5rem;
+}
+
+#pricing .pricing_box {
+  background-color: #FFF;
+  padding: 2rem 3.75rem;
+}
+
+#pricing .pricing_box:hover {
+  filter: drop-shadow(0 24px 64px rgba(0,0,0,.12));
+}
+
+#pricing .pricing_box .description p {
+  font-weight: 600;
+}
+#pricing .pricing_box .description p.num {
+  color: var(--primary-color);
+}
+
+#pricing .pricing_box hr{
+  margin: 1.6rem 0;
+}
+
+/* [ 9 ] How-to-register section */
+#how-to-register .row.head {
+  column-gap: 8.5rem;
+} 
+
+#how-to-register .steps {
+  margin-top: 4rem;
+}
+
+#how-to-register .steps .step{
+  padding: 2rem;
+} 
+#how-to-register .steps .col-12{
+  padding: 0;
+} 
+
+#how-to-register .steps .step{
+  padding: 2rem;
+} 
+
+#how-to-register .steps .step[num="1"]{
+  border-right: 1px solid #D4D9E4;
+  border-bottom: 1px solid #D4D9E4;
+} 
+
+#how-to-register .steps .step[num="2"]{
+  border-right: 1px solid #D4D9E4;
+  border-bottom: 1px solid #D4D9E4;
+} 
+
+#how-to-register .steps .step[num="3"]{
+  border-bottom: 1px solid #D4D9E4;
+} 
+
+#how-to-register .steps .step[num="4"]{
+  border-right: 1px solid #D4D9E4;
+} 
+#how-to-register .steps .step[num="5"]{
+  border-right: 1px solid #D4D9E4;
+} 
+
+#how-to-register .steps .step .title{
+  display: inline-block;
+  padding: .4rem 1.2rem;
+  background-color: var(--sky-color);
+  color: #FFF;
+  border-radius: 64px;
+  margin-bottom: 1.2rem;
+  text-transform: capitalize;
+} 
+
+/* [ 10 ] Team section */
+#team .members {
+  margin-top: 10rem;
+}
+
+#team .members p.position{
+  color: var(--accent-color);
+}
+
+#team p.intro {
+  width: 80%;
+  margin: auto;
+}
+
+
+/* 
+
+Media Query 
+
+*/
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #about .row, #what-solve .row, #how-to-register .row.head{
+    column-gap: 4.25rem;
+  }
+
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  section {
+    padding: 3rem 0;
+  }
+
+  #home .home-img {
+    height: 20rem;
+  }
+
+  #about .video-player {
+    height: 15rem;
+  }
+
+  #power .power-img {
+    height: 14rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #how-to-register .steps .step[num="2"] {
+    border-right: 0 solid #D4D9E4 !important;
+  }
+  #how-to-register .steps .step[num="3"] {
+    border-right: 1px solid #D4D9E4 !important;
+  }
+  #how-to-register .steps .step[num="4"] {
+    border-right: 0 solid #D4D9E4 !important;
+    border-bottom: 1px solid #D4D9E4 !important;
+  }
+
+  #team .members {
+    margin-top: 5rem;
+  }
+
+  
+}
+
+@media(max-width: 768px) {
+  #pricing .pricing_box {
+    padding: 2rem ;
+  }
+  #team p.intro {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+/* Mobile  */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+
+  #trust-us .regulator_info {
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  }
+
+  #how-to-register .steps .step:not([num="6"]) {
+    border: none !important;
+    border-bottom: 1px solid #D4D9E4 !important;
+  }
+}
+
+
+
+
