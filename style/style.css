@@ -68,17 +68,6 @@
   font-style: normal;
 }
 
-/* @font-face {
-  font-family: 'Mont';
-  src: local('Mont Black'), local('Mont-Black'),
-      url('/fonts/Mont/Mont-Black.woff2') format('woff2'),
-      url('/fonts/Mont/Mont-Black.woff') format('woff'),
-      url('/fonts/Mont/Mont-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-} */
-
-
 
 *{box-sizing: border-box;}
 
@@ -100,23 +89,11 @@ body {
 }
 
 
-
-@media(min-width: 1600px) {
-  .container {
-    max-width: 1440px;
-  }
-}
-@media(min-width: 1800px) {
-  .container {
-    max-width: 1600px;
-  }
-}
-
 h1,h2,h3,h4,h5,h6,p {margin: 0;}
 
 ol, ul {list-style: none; margin: 0; padding: 0;}
 
-h1 {
+h1,.h1 {
   color: var(--primary-color);
   font-size: 4rem;
   line-height: 4.5rem;
@@ -155,6 +132,19 @@ p {
   font-size: .9rem;
 }
 
+p.boxed {
+  width: 70%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
 .btn {
   padding: .85rem 2.4rem;
   font-size: 1rem;
@@ -215,6 +205,42 @@ li svg {
 #header .navbar-nav .nav-item:hover .nav-link{
   color: var(--accent-color);
 }
+
+.navbar-toggler:focus { 
+  box-shadow: none;
+}
+
+#header .navbar-toggler-icon {
+  position: relative;
+  display: block;
+}
+
+#header  .navbar-toggler .navbar-toggler-icon::before,
+#header .navbar-toggler .navbar-toggler-icon::after {
+  position: absolute;
+  content: '';
+    width: 25px;
+    height: 3px;
+    left: 0;
+    top: 30%;
+    transition: all .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: var(--primary-color);
+}
+
+#header .navbar-toggler  .navbar-toggler-icon::after {
+    top: 70%;
+}
+
+#header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+#header .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
 
 
 
@@ -395,6 +421,7 @@ li svg {
 
 #how-to-register .steps .step{
   padding: 2rem;
+  height: 100%;
 } 
 #how-to-register .steps .col-12{
   padding: 0;
@@ -425,7 +452,8 @@ li svg {
   border-right: 1px solid #D4D9E4;
 } 
 
-#how-to-register .steps .step .title{
+#how-to-register .steps .step .title,
+#referral-program #refer .num{
   display: inline-block;
   padding: .4rem 1.2rem;
   background-color: var(--sky-color);
@@ -444,10 +472,262 @@ li svg {
   color: var(--accent-color);
 }
 
-#team p.intro {
-  width: 80%;
-  margin: auto;
+
+/* [ 11 ] FAQ section */
+
+#faq .accordion {
+  margin-top: 5rem;
+  text-align: left;
 }
+
+#faq .accordion .accordion-item{
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#faq .accordion .accordion-item:last-of-type{
+  border: none;
+}
+
+
+#faq .accordion .accordion-button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.5rem 0;
+}
+
+#faq .accordion .accordion-item .accordion-body {
+  padding: 0 0 2rem;
+
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* [ 12 ] Sponsers section */
+#sponsers img {
+  max-width: 282px;
+}
+
+/* active box */
+.accordion-button:not(.collapsed) {
+  color: var(--primary-color);
+  background-color: initial;
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  background-image: url(/images/plus-icon.svg);
+  background-size: cover;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url(/images/minus-icon.svg);
+}
+.accordion-button.collapsing::after {
+  transform: rotate(-180deg);
+}
+
+
+/* [ 13 ] Footer section */
+#footer {
+  padding: 5rem 0;
+  background-color: var(--white-100-color);
+}
+
+#footer .row {
+  column-gap:  8.5rem;
+} 
+
+#footer .h1 {
+  font-weight: 500;
+}
+#footer .footer_logo {
+  margin: 2rem 0;
+}
+#footer .footer_contact_info {
+  justify-content: space-between;
+}
+
+
+#footer .footer_contact_info h5{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+#footer .social_icons {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+}
+
+#footer .social_icons li:not(:last-of-type){
+  margin-right: 1.5rem;
+}
+
+#footer form label {
+  position: relative;
+  font-family: 'Mont';
+  font-weight: 600;
+}
+#footer form label.required::after {
+  position: absolute;
+  content: '*';
+  color: var(--accent-color);
+}
+
+#footer form .input-group {
+  margin-bottom: 2rem;
+}
+
+#footer form .input-group > div{
+  flex-grow: 1;
+}
+
+#footer form .form-control {
+  background-color: transparent;
+  border: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+#footer form .form-control:focus {
+  box-shadow: none;
+}
+
+#footer form .name {
+  position: relative;
+}
+
+#footer form input::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--accent-color);
+}
+
+#footer form .name:active #footer form .name::after{
+  width: 100%;
+}
+
+
+#footer form .textarea {
+  margin-bottom: 2rem;
+}
+
+
+/* START REFERRAL PROGRAM PAGE STYLE */
+
+#referral-program #header {
+  position: absolute;
+  width: 100%;
+}
+
+#referral-program .navbar-brand img {
+  filter: brightness(40);
+}
+#referral-program #header .navbar-nav .nav-item:hover .nav-link {
+  text-decoration: underline;
+}
+
+#referral-program #home {
+  background-image: url(/images/hero-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 48rem;
+  display: flex;
+  align-items: center;
+
+}
+
+#referral-program #home h1,
+#referral-program #home .marked ,
+#referral-program #header .navbar-nav .nav-item .nav-link {
+  color: #FFF;
+}
+
+#referral-program #home p {
+  color: #B7B7B7;
+}
+
+
+#referral-program #features {
+  transform: translateY(-100px);
+}
+#referral-program #features .feature {
+  background-color: #FFF;
+  border-radius: 16px;
+  padding: 25px;
+  filter: drop-shadow(0 4px 32px rgba(0,0,0,.08));
+  height: 100%;
+}
+
+#referral-program #features .feature .feature_icon {
+  margin-bottom: 2.5rem;
+}
+
+#referral-program #bonus .container >  div {
+  padding: 3rem;
+}
+
+#referral-program #bonus .system,
+#referral-program #bonus .global {
+  background-color: var(--pink-color);
+}
+#referral-program #bonus .sponsorship {
+  background-color: var(--green-color);
+}
+#referral-program #bonus .management {
+  background-color: var(--purple-color);
+}
+
+#referral-program #bonus > div .bonus_img{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100%;
+  min-height: 200px;
+}
+
+#referral-program #bonus .example {
+  border: 1px solid #C4C9D6
+}
+#referral-program #bonus  ul  {
+  list-style: disc;
+  margin-left: .75rem;
+}
+
+#referral-program #bonus  ul li{
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+#referral-program #steps-to-earn h2,
+#referral-program #refer h2{
+  margin-bottom: 5rem;
+}
+
+#referral-program #steps-to-earn .num {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 3.4rem;
+  color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* 
@@ -456,9 +736,24 @@ Media Query
 
 */
 
+@media(min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+@media(min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+
 /* Medium screens */
 @media (min-width: 768px) and (max-width: 1199px) {
-  #about .row, #what-solve .row, #how-to-register .row.head{
+  #about .row, 
+  #what-solve .row, 
+  #how-to-register .row.head, 
+  #footer .row{
     column-gap: 4.25rem;
   }
 
@@ -466,7 +761,7 @@ Media Query
 
 /* Tablet */
 @media (max-width: 991px) {
-  h1 {
+  h1,.h1 {
     font-size: 3rem;
     line-height: 3rem;
   }
@@ -476,14 +771,24 @@ Media Query
     line-height: 2rem;
     margin-bottom: 1.5rem;
   }
+  #referral-program #steps-to-earn h2 ,
+  #referral-program #refer h2 {
+    margin-bottom: 3rem;
+  }
 
   h3{
     font-size: 1.5rem;
     line-height: 1.5rem;
     margin-bottom: 1.5rem;
   }
+
   section {
     padding: 3rem 0;
+  }
+
+  .navbar-collapse {
+    margin-top: 2.5rem;
+    text-align: left;
   }
 
   #home .home-img {
@@ -498,6 +803,7 @@ Media Query
     height: 14rem;
     margin-bottom: 1.5rem;
   }
+
 
   #how-to-register .steps .step[num="2"] {
     border-right: 0 solid #D4D9E4 !important;
@@ -517,19 +823,24 @@ Media Query
   
 }
 
+
 @media(max-width: 768px) {
   #pricing .pricing_box {
     padding: 2rem ;
   }
-  #team p.intro {
+  p.boxed {
     width: 100%;
     margin: auto;
+  }
+
+  #sponsers img {
+    max-width: 150px;
   }
 }
 
 /* Mobile  */
 @media (max-width: 576px) {
-  h1 {
+  h1,.h1 {
     font-size: 2rem;
     line-height: 2rem;
   }
@@ -539,13 +850,38 @@ Media Query
     line-height: 1.6rem;
   }
 
-  #trust-us .regulator_info {
-    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  .navbar-brand {
+    max-width: 150px;
   }
+
+  #trust-us .regulator_info {
+    padding: 2rem;
+  }
+
+  #trust-us .regulator_info .regulator_head .regulator_avatar{
+    max-width: 120px;
+  }
+
+  #how-to-register .steps .step{
+    padding: 2rem 1rem;
+  } 
 
   #how-to-register .steps .step:not([num="6"]) {
     border: none !important;
     border-bottom: 1px solid #D4D9E4 !important;
+  }
+
+  #sponsers img {
+    max-width: 120px;
+  }
+
+  #footer form .input-group > div{
+    width: 100%;
+  }
+
+  #footer form .input-group .name,
+  #footer form .input-group .subject {
+    margin-bottom: 2rem;
   }
 }
 

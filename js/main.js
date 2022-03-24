@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	// Video Popup
 	$('.popup-youtube').magnificPopup({
 		disableOn: 700,
 		type: 'iframe',
@@ -7,5 +8,14 @@ $(document).ready(function() {
 		preloader: false,
 
 		fixedContentPos: false
+	});
+
+	// Header will be given a bg white once you scroll
+
+	// set bg images
+	let takeBg = $("[bgImage=true]");
+	takeBg.each(function (indexInArray, e) { 
+	let bgUrl = $(e).attr('bgimageurl');
+	$(e).css('backgroundImage', `url(${bgUrl})`)
 	});
 });
